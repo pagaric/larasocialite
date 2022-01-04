@@ -15,7 +15,7 @@ class AuthAzureController extends Controller
 
     public function callback(Request $request)
     {
-        $user = Socialite::driver('azure')->user();
+        $user = Socialite::driver('azure')->stateless()->user();
         $request = $request;
         return view('logged', compact('user', 'request'));
     }
